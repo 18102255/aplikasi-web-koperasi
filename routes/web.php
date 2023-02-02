@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+    Route::get('/', function () {
+        return view('welcome');
+    Route::get('/sesi',[SessionController::class,'index']);
+    Route:: post('/sesi/login',[SessionController::class,'login']);
+    Route:: post('/sesi/logout',[SessionController::class,'logout']);
+    Route::get('/sesi/register',[SessionController::class,'register']);
+    Route:: post('/sesi/create',[SessionController::class,'create']);
+    });
+
